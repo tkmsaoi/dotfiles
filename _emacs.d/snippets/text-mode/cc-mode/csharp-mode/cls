@@ -1,0 +1,10 @@
+public class $1
+{
+  /// <summary>
+  /// $3
+  /// </summary>
+  public $1($2)
+  {
+    $0
+  }
+}

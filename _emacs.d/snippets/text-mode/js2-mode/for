@@ -1,0 +1,3 @@
+for (${1:var i = 0, length = .length}; ${2:i < length}; ${3:i++}) {
+  $0
+}

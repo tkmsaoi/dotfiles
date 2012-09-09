@@ -1,0 +1,6 @@
+#Author : Jonas Bonèr <jonas@jonasboner.com>
+#name : object name extends T
+# --
+object ${1:name} {
+  $0
+}

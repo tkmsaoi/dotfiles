@@ -1,0 +1,4 @@
+/// <summary>
+/// $4
+/// </summary>
+${1:private} $2 $3;

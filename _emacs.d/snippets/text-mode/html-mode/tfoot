@@ -1,0 +1,7 @@
+#contributor : Jimmy Wu <frozenthrone88@gmail.com>
+#name : <tfoot ...>...</tfoot>
+#group : table
+# --
+<tfoot$1>
+  $0
+</tfoot>

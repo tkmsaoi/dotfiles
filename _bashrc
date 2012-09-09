@@ -1,0 +1,49 @@
+[ -z "$PS1" ] && return
+
+UNAME=`uname`
+
+case "$TERM" in
+    xterm*|rxvt*) COLOR=yes ;;
+    *) unset COLOR ;;
+esac
+
+shopt -s histappend
+shopt -s checkwinsize
+
+HISTCONTROL=ignoredups:ignorespace
+HISTSIZE=1000
+HISTFILESIZE=2000
+
+if [ -n "$COLOR" ]; then
+    PS1='\[\033[01;34m\]\u@\h:\w\[\033[0m\]\n\[\033[01;32m\]\$\[\033[0m\] '
+else
+    PS1='\u@\h:\w\n\$ '
+fi
+
+if [ -x "`which gdircolors`" ]; then
+    alias dircolors='gdircolors'
+    alias ls='gls --color=auto'
+elif [ -x "`which dircolors`" ]; then
+    alias ls='ls --color=auto'
+elif [ "$UNAME" = "Darwin" ]; then
+    alias ls='ls -G'
+fi
+
+if [ -n "$COLOR" ]; then
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+alias ll='ls -Fal'
+alias chmodf='find . -type f -print | xargs chmod'
+alias chmodd='find . -type d -print | xargs chmod'
+alias less='less -MR'
+alias be='bundle exec'
+
+if [ "$UNAME" = "Darwin" ]; then
+    alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs -nw'
+fi
+
+[ -s "$HOME/.rvm/scripts/rvm" ] && . "$HOME/.rvm/scripts/rvm"
+[ -s "$HOME/.nvm/nvm.sh" ] && . "$HOME/.nvm/nvm.sh"

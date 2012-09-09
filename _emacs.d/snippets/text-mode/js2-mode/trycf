@@ -1,0 +1,7 @@
+try {
+  $0
+} catch (e) {
+  
+} finally {
+  
+}

@@ -1,0 +1,20 @@
+termcapinfo xterm*|kterm*|screen* is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l
+
+term xterm-color
+
+defutf8 on
+startup_message off
+caption always
+
+escape ^z^z
+#zombie ^[
+
+bind 0 remove
+bind 1 only
+bind 2 split
+bind o focus
+bind u eval "encoding UTF-8"
+bind e eval "encoding eucJP"
+bind s eval "encoding SJIS"
+bind j eval "encoding jis"
+bind w windowlist -b
