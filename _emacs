@@ -6,10 +6,10 @@
         (setq load-path (cons default-directory load-path))
         (normal-top-level-add-subdirs-to-load-path)))))
 
-(add-load-path-recursive my-site-lisp-directory)
+(add-load-path-recursive "~/.emacs.d/site-lisp")
 
 (require 'init-loader)
-(init-loader-load my-inits-directory)
+(init-loader-load "~/.emacs.d/inits")
 
 (setq user-full-name "Takamasa Aoi")
 (setq user-mail-address "tkms.aoi@gmail.com")

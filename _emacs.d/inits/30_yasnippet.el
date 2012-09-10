@@ -1,3 +1,3 @@
 (require 'yasnippet)
 (yas/initialize)
-(yas/load-directory my-snippets-directory)
+(yas/load-directory "~/.emacs.d/snippets")
