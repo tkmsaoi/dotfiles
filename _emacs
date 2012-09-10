@@ -1,8 +1,3 @@
-(defvar my-emacs-directory "~/.emacs.d/")
-(defvar my-site-lisp-directory (concat my-emacs-directory "site-lisp"))
-(defvar my-inits-directory (concat my-emacs-directory "inits"))
-(defvar my-snippets-directory (concat my-emacs-directory "snippets"))
-
 (defun add-load-path-recursive (path)
   (dolist (dir (let ((dir (expand-file-name path)))
                  (list dir (format "%s%d" dir emacs-major-version))))
