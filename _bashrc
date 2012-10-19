@@ -18,10 +18,11 @@ EDITOR=vi
 
 if [ -n "$COLOR" ]; then
     PS1='\[\033[01;34m\]\u@\h:\w\[\033[0m\]\n\[\033[01;32m\]\$\[\033[0m\] '
+    PS2='\[\033[01;32m\]>\[\033[0m\] '
 else
     PS1='\u@\h:\w\n\$ '
+    PS2='> '
 fi
-PS2='> '
 
 if [ -x "`which gdircolors`" ]; then
     alias dircolors='gdircolors'
