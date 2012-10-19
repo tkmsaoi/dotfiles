@@ -21,6 +21,7 @@ if [ -n "$COLOR" ]; then
 else
     PS1='\u@\h:\w\n\$ '
 fi
+PS2='> '
 
 if [ -x "`which gdircolors`" ]; then
     alias dircolors='gdircolors'
