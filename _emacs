@@ -10,12 +10,3 @@
 
 (require 'init-loader)
 (init-loader-load "~/.emacs.d/inits")
-
-(setq user-full-name "Takamasa Aoi")
-(setq user-mail-address "tkms.aoi@gmail.com")
-
-(add-to-list 'default-frame-alist '(width . 100))
-(add-to-list 'default-frame-alist '(height . 40))
-(add-to-list 'default-frame-alist '(top . 0))
-(add-to-list 'default-frame-alist '(left . 0))
-(add-to-list 'default-frame-alist '(alpha . (85 85 85 85)))
