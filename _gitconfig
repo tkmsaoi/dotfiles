@@ -1,3 +1,10 @@
 [user]
 	name = Takamasa Aoi
 	email = tkms.aoi@gmail.com
+[color]
+	ui = auto
+[alias]
+	co = checkout
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+[core]
+	excludesfile = ~/.gitignore
