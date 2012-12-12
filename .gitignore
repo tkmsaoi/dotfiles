@@ -1,5 +1,6 @@
 .DS_Store
 _emacs.d/anything-c-adaptive-history
 _emacs.d/auto-save-list/
+_emacs.d/tramp
 _vim/.netrwhist
 _vimperator/info/
