@@ -1,10 +1,9 @@
-[user]
-	name = Takamasa Aoi
-	email = tkms.aoi@gmail.com
+[core]
+	excludesfile = ~/.gitignore
 [color]
 	ui = auto
 [alias]
 	co = checkout
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-[core]
-	excludesfile = ~/.gitignore
+[include]
+	path = ~/.gitconfig.local

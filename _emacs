@@ -10,3 +10,6 @@
 
 (require 'init-loader)
 (init-loader-load "~/.emacs.d/inits")
+
+(if (file-exists-p "~/.emacs.local")
+ (load "~/.emacs.local"))

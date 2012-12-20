@@ -10,15 +10,15 @@ esac
 shopt -s histappend
 shopt -s checkwinsize
 
-HISTCONTROL=ignoredups:ignorespace
+HISTCONTROL=ignorespace
 HISTSIZE=1000
 HISTFILESIZE=2000
 PAGER=less
 EDITOR=vi
 
 if [ -n "$COLOR" ]; then
-    PS1='\[\033[01;34m\]\u@\h:\w\[\033[0m\]\n\[\033[01;32m\]\$\[\033[0m\] '
-    PS2='\[\033[01;32m\]>\[\033[0m\] '
+    PS1='\[\033[00;36m\]\u@\h:\w\[\033[0m\]\n\[\033[00;36m\]\$\[\033[0m\] '
+    PS2='\[\033[00;36m\]>\[\033[0m\] '
 else
     PS1='\u@\h:\w\n\$ '
     PS2='> '
@@ -44,14 +44,21 @@ alias chmodf='find . -type f -print | xargs chmod'
 alias chmodd='find . -type d -print | xargs chmod'
 alias less='less -MR'
 alias be='bundle exec'
+alias sudo='sudo '
 
 if [ "$UNAME" = "Darwin" ]; then
     alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs -nw'
 fi
 
-if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
+if [ -x "`which brew`" ] && [ -f `brew --prefix`/etc/bash_completion ]; then
+    . `brew --prefix`/etc/bash_completion
+elif [ -f /opt/local/etc/bash_completion ]; then
+    . /opt/local/etc/bash_completion
+elif [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 
 [ -s "$HOME/.rvm/scripts/rvm" ] && . "$HOME/.rvm/scripts/rvm"
 [ -s "$HOME/.nvm/nvm.sh" ] && . "$HOME/.nvm/nvm.sh"
+
+[ -s "$HOME/.bashrc.local" ] && . "$HOME/.bashrc.local"
