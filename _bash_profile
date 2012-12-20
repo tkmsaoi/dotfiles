@@ -1,5 +1,15 @@
-PATH=$HOME/local/bin:$HOME/local/sbin:/usr/local/bin:/usr/local/sbin:$PATH
+PATH="/usr/local/sbin:$PATH"
+PATH="/usr/local/bin:$PATH"
+PATH="/opt/local/sbin:$PATH"
+PATH="/opt/local/bin:$PATH"
+PATH="$HOME/local/sbin:$PATH"
+PATH="$HOME/local/bin:$PATH"
 
-if [ -f ~/.bashrc ] ; then
-. ~/.bashrc
+if [ -d "$HOME/.rbenv/bin" ]; then
+    PATH="$HOME/.rbenv/bin:$PATH"
+    eval "$(rbenv init -)"
+fi
+
+if [ -f "$HOME/.bashrc" ]; then
+    . ~/.bashrc
 fi
