@@ -1,5 +1,11 @@
 (setq ns-command-modifier 'meta)
 (setq ns-alternate-modifier 'super)
+(setq ns-pop-up-frames nil)
+
+(define-key global-map [?\¥] [?\\])
+(define-key global-map [?\C-¥] [?\C-\\])
+(define-key global-map [?\M-¥] [?\M-\\])
+(define-key global-map [?\C-\M-¥] [?\C-\M-\\])
 
 (global-set-key (kbd "M-<RET>") 'ns-toggle-fullscreen)
 
