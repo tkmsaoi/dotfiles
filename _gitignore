@@ -1,1 +1,17 @@
 .DS_Store
+thumbs.db
+*~
+*.swp
+*.bak
+*.log
+
+.bundle
+
+node_modules
+
+*.o
+*.lib
+*.a
+*.so
+*.so.*
+*.dylib
