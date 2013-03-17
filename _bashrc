@@ -1,67 +1,8 @@
 [ -z "$PS1" ] && return
 
-case "$TERM" in
-    xterm*|rxvt*) COLOR=yes;;
-esac
-
-shopt -s histappend
-shopt -s checkwinsize
-
-HISTCONTROL=ignorespace
-HISTSIZE=1000
-HISTFILESIZE=2000
-PAGER=less
-EDITOR=vi
-
-if [ -n "$COLOR" ]; then
-    PS1="\[\033[00;36m\]\u@\h:\w\[\033[0m\]\n\[\033[00;36m\]\$\[\033[0m\] "
-    PS2='\[\033[00;36m\]>\[\033[0m\] '
-else
-    PS1='\u@\h:\w\n\$ '
-    PS2='> '
-fi
-
-if [ -x "`which gdircolors`" ]; then
-    alias dircolors='gdircolors'
-    alias ls='gls --color=auto'
-elif [ -x "`which dircolors`" ]; then
-    alias ls='ls --color=auto'
-elif [ "$(uname)" = "Darwin" ]; then
-    alias ls='ls -G'
-fi
-
-if [ -n "$COLOR" ]; then
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-fi
-
-if [ -x "$(which colordiff)" ]; then
-    alias diff='colordiff'
-fi
-
-alias sudo='sudo '
-alias ll='ls -Fal'
-alias chmodf='find . -type f -print | xargs chmod'
-alias chmodd='find . -type d -print | xargs chmod'
-alias less='less -MR'
-alias be='bundle exec'
-
-if [ -x "/Applications/Emacs.app/Contents/MacOS/Emacs" ]; then
-    alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs -nw'
-fi
-
-if [ -x "$(which brew)" ] && [ -f "$(brew --prefix)/etc/bash_completion" ]; then
-    . "$(brew --prefix)/etc/bash_completion"
-elif [ -f /opt/local/etc/bash_completion ]; then
-    . /opt/local/etc/bash_completion
-elif [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-fi
-
-[ -s "$HOME/.rvm/scripts/rvm" ] && . "$HOME/.rvm/scripts/rvm"
-[ -s "$HOME/.nvm/nvm.sh" ] && . "$HOME/.nvm/nvm.sh"
+for script in "$HOME"/.bash.d/*.sh; do
+    . "$script"
+done
+unset script
 
 [ -s "$HOME/.bashrc.local" ] && . "$HOME/.bashrc.local"
-
-unset COLOR
