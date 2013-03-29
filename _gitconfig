@@ -1,5 +1,6 @@
 [core]
 	excludesfile = ~/.gitignore
+	editor = vim -c \"set fenc=utf-8\"
 [color]
 	ui = auto
 [alias]
@@ -7,3 +8,5 @@
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 [include]
 	path = ~/.gitconfig.local
+[gc]
+	auto = 0
