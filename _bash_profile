@@ -16,6 +16,13 @@ export LDFLAGS="-L$HOME/local/lib"
 export ACLOCAL_PATH="$HOME/local/share/aclocal"
 #export PKG_CONFIG_PATH="$HOME/local/lib/pkgconfig:/opt/X11/lib/pkgconfig:$PKG_CONFIG_PATH"
 
+if [ -s /opt/local/etc/bash_completion ]; then
+    . /opt/local/etc/bash_completion
+    [ -s /opt/local/share/git-core/git-prompt.sh ] && . /opt/local/share/git-core/git-prompt.sh
+elif [ -s /etc/bash_completion ]; then
+    . /etc/bash_completion
+fi
+
 if [ -d "$HOME/.rbenv/bin" ]; then
     export PATH="$HOME/.rbenv/bin:$PATH"
     eval "$(rbenv init -)"
