@@ -2,7 +2,7 @@ if [ -x "/opt/local/bin/port" ]; then
     export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 fi
 
-if [ -x "$(which brew)" ]; then
+if command -v brew >/dev/null 2>&1; then
     export PATH="$(brew --prefix)/bin:$brew_prefix/sbin:$PATH"
 fi
 

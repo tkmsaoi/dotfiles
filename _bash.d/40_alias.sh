@@ -6,10 +6,10 @@ alias be='bundle exec'
 alias install-composer='curl -sS https://getcomposer.org/installer | php'
 alias composer='php composer.phar'
 
-if [ -x "$(which gdircolors)" ]; then
+if command -v gdircolors >/dev/null 2>&1; then
     alias dircolors='gdircolors'
     alias ls='gls --color=auto'
-elif [ -x "$(which dircolors)" ]; then
+elif command -v dircolors >/dev/null 2>&1; then
     alias ls='ls --color=auto'
 elif [ "$(uname)" = "Darwin" ]; then
     alias ls='ls -G'
@@ -25,7 +25,7 @@ if [ -n "$color" ]; then
 fi
 unset color
 
-if [ -x "$(which colordiff)" ]; then
+if command -v colordiff >/dev/null 2>&1; then
     alias diff='colordiff'
 fi
 
