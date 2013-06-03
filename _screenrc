@@ -18,3 +18,5 @@ bind e eval "encoding eucJP"
 bind s eval "encoding SJIS"
 bind j eval "encoding jis"
 bind w windowlist -b
+
+caption always "%`%-w%{=b bw}%n %t%{-}%+w"
