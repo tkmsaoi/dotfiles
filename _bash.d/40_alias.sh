@@ -1,6 +1,7 @@
-alias sudo='sudo '
-alias ll='ls -Fal'
+alias ll='ls -Fl'
+alias la='ls -Fal'
 alias less='less -MR'
+alias sudo='sudo '
 alias be='bundle exec'
 
 alias install-composer='curl -sS https://getcomposer.org/installer | php'
