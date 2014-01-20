@@ -19,4 +19,6 @@ bind s eval "encoding SJIS"
 bind j eval "encoding jis"
 bind w windowlist -b
 
+shell $SHELL
+
 caption always "%`%-w%{=b bw}%n %t%{-}%+w"
