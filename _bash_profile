@@ -6,7 +6,9 @@ if command -v brew >/dev/null 2>&1; then
     export PATH="$(brew --prefix)/bin:$brew_prefix/sbin:$PATH"
 fi
 
-if [ -d "$HOME/android-sdk" ]; then
+if [ -d "$HOME/adt/sdk" ]; then
+    export PATH="$HOME/adt/sdk/tools:$HOME/adt/sdk/platform-tools:$PATH"
+elif [ -d "$HOME/android-sdk" ]; then
     export PATH="$HOME/android-sdk/tools:$HOME/android-sdk/platform-tools:$PATH"
 fi
 
@@ -14,7 +16,6 @@ export PATH="$HOME/local/games:$HOME/local/bin:$HOME/local/sbin:$PATH"
 export CFLAGS="-I$HOME/local/include"
 export LDFLAGS="-L$HOME/local/lib"
 export ACLOCAL_PATH="$HOME/local/share/aclocal"
-#export PKG_CONFIG_PATH="$HOME/local/lib/pkgconfig:/opt/X11/lib/pkgconfig:$PKG_CONFIG_PATH"
 
 if [ -s /opt/local/etc/bash_completion ]; then
     . /opt/local/etc/bash_completion
