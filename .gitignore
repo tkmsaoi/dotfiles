@@ -1,4 +1,5 @@
 .DS_Store
+_emacs.d/abbrev_defs
 _emacs.d/anything-c-adaptive-history
 _emacs.d/auto-save-list/
 _emacs.d/tramp
