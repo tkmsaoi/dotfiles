@@ -5,8 +5,21 @@
 	ui = auto
 [alias]
 	co = checkout
+	s = status
+	d = diff
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	tree = log --graph --pretty='format:%C(yellow)%h%Creset %s %Cgreen(%an)%Creset %Cred%d%Creset'
+	trnm = log --no-merges --graph --pretty='format:%C(yellow)%h%Creset %s %Cgreen(%an)%Creset %Cred%d%Creset'
+	chase = branch -avv
 [include]
 	path = ~/.gitconfig.local
 [gc]
 	auto = 0
+[pull]
+	rebase = true
+[merge]
+	ff = false
+[pack]
+	writeBitmapHashCache = true
+[repack]
+	writeBitmaps = true
