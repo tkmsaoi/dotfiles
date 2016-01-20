@@ -4,12 +4,19 @@ fi
 
 if command -v brew >/dev/null 2>&1; then
     export PATH="$(brew --prefix)/bin:$brew_prefix/sbin:$PATH"
+    if [ -f $(brew --prefix)/etc/bash_completion ]; then
+        . $(brew --prefix)/etc/bash_completion
+    fi
 fi
 
 if [ -d "$HOME/adt/sdk" ]; then
     export PATH="$HOME/adt/sdk/tools:$HOME/adt/sdk/platform-tools:$PATH"
 elif [ -d "$HOME/android-sdk" ]; then
     export PATH="$HOME/android-sdk/tools:$HOME/android-sdk/platform-tools:$PATH"
+fi
+
+if [ -d "/Library/Java/Home" ]; then
+    export JAVA_HOME="/Library/Java/Home"
 fi
 
 export PATH="$HOME/local/games:$HOME/local/bin:$HOME/local/sbin:$PATH"
