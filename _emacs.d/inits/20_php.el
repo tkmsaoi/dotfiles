@@ -1,4 +1,5 @@
-(autoload 'php-mode "php-mode")
+(require 'php-mode)
+
 (add-hook 'php-mode-hook
           (lambda ()
             ;; (c-set-style "stroustrup")
@@ -8,5 +9,5 @@
             ;; (c-set-offset 'arglist-close 0)
             ;; (setq php-mode-coding-style 'pear)
             ;; (setq php-mode-coding-style 'drupal)
-            (setq php-mode-coding-style 'wordpress)
+            (php-enable-psr2-coding-style)
             (set (make-local-variable 'indent-tabs-mode) t)))
