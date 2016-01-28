@@ -15,3 +15,9 @@ node_modules
 *.so
 *.so.*
 *.dylib
+
+*.sublime-workspace
+
+GPATH
+GRTAGS
+GTAGS
