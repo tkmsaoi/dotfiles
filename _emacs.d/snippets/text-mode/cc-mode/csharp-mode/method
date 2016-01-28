@@ -1,7 +1,0 @@
-/// <summary>
-/// ${5:Description}
-/// </summary>${2:$(if (string= (upcase text) "VOID") "" (format "%s%s%s" "\n/// <returns><c>" text "</c></returns>"))}
-${1:public} ${2:void} $3($4)
-{
-$0
-}

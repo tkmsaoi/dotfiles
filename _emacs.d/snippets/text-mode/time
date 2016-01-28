@@ -1,3 +1,1 @@
-#name : (current time)
-# --
-`(current-time-string)`
+`(format-time-string "%T")`

@@ -1,0 +1,2 @@
+/** @var Action_Helper_$1 $${1:$(s-lower-camel-case yas-text)}Helper */
+$${1:$(s-lower-camel-case yas-text)}Helper = $this->getHelper('$1');

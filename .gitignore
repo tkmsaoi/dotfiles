@@ -1,8 +1,12 @@
 .DS_Store
 _emacs.d/abbrev_defs
+_emacs.d/ac-comphist.dat
 _emacs.d/anything-c-adaptive-history
 _emacs.d/auto-save-list/
 _emacs.d/elpa/
+_emacs.d/projectile-bookmarks.eld
+_emacs.d/projectile.cache
+_emacs.d/recentf
 _emacs.d/tramp
 _vim/.netrwhist
 _vimperator/info/

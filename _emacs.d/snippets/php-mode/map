@@ -1,0 +1,2 @@
+/** @var Application_Model_Mapper_$1 $${1:$(s-lower-camel-case yas-text)}Mapper */
+$${1:$(s-lower-camel-case yas-text)}Mapper = $this->getMapper('$1');

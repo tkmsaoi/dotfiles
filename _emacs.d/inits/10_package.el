@@ -7,14 +7,42 @@
 (when (< emacs-major-version 24)
   (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
 
+(when (boundp 'package-pinned-packages)
+  (setq package-pinned-packages
+        '(
+          (editorconfig . "melpa-stable")
+          (elixir-mode . "melpa-stable")
+          (helm . "melpa-stable")
+          )))
+
 (defvar my/installing-packages
   '(
+    ag
+    auto-complete
+    csharp-mode
+    dracula-theme
+    editorconfig
     elixir-mode
+    emmet-mode
+    enh-ruby-mode
+    exec-path-from-shell
+    flycheck
+    helm
+    helm-ag
+    helm-gtags
+    helm-projectile
+    hlinum
+    js2-mode
+    markdown-mode
+    omnisharp
     php-mode
+    projectile
+    ruby-electric
+    s
+    spacegray-theme
+    wgrep-ag
+    yasnippet
     ))
-
-(when (boundp 'package-pinned-packages)
-  (add-to-list 'package-pinned-packages '(elixir-mode . "melpa-stable") t))
 
 (package-initialize)
 

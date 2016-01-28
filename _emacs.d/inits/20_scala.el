@@ -1,6 +1,0 @@
-(require 'scala-mode-auto)
-(setq scala-interpreter "scala")
-;;(setq scala-mode-feature:electric-on-per-default t)
-(defun run-scala ()
-  (interactive)
-  (call-interactively 'scala-run-scala))
