@@ -33,3 +33,7 @@ fi
 if [ -x "/Applications/Emacs.app/Contents/MacOS/Emacs" ]; then
     alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs -nw'
 fi
+
+if command -v subl >/dev/null 2>&1; then
+    alias subl='subl -a'
+fi

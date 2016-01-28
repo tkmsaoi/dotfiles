@@ -9,10 +9,8 @@ if command -v brew >/dev/null 2>&1; then
     fi
 fi
 
-if [ -d "$HOME/adt/sdk" ]; then
-    export PATH="$HOME/adt/sdk/tools:$HOME/adt/sdk/platform-tools:$PATH"
-elif [ -d "$HOME/android-sdk" ]; then
-    export PATH="$HOME/android-sdk/tools:$HOME/android-sdk/platform-tools:$PATH"
+if [ -d "$HOME/Library/Android/sdk" ]; then
+    export PATH="$HOME/Library/Android/sdk/tools:$HOME/Library/Android/sdk/platform-tools:$PATH"
 fi
 
 if [ -d "/Library/Java/Home" ]; then
