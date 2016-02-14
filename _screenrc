@@ -1,20 +1,39 @@
-termcapinfo xterm*|kterm*|screen* is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l
-term xterm-color
-defutf8 on
+termcapinfo xterm* ti@:te@
+term xterm
 defscrollback 10000
-shell $SHELL
-#zombie ^[
+shell -$SHELL
+defutf8 on
+
+nethack on
+
+logfile "$HOME/.screen.d/log/%S-%Y%m%d-%n.log"
+deflog on
 
 startup_message off
-caption always "%`%-w%{=b bw}%n %t%{-}%+w"
 
-escape ^t^t
+caption always "%{= kW}%-w%{+b Wk}%n %t%{-}%+w"
+sorendition "= yk"
+
+hardstatus off
+hardstatus ignore
+
+vbell off
+bell_msg ""
+
+escape ^g^g
 bind 0 remove
 bind 1 only
 bind 2 split
+bind 3 split -v
 bind o focus
-bind u eval "encoding UTF-8"
-bind e eval "encoding eucJP"
-bind s eval "encoding SJIS"
-bind j eval "encoding jis"
-bind w windowlist -b
+bind b windowlist -b
+bind N colon 'number '
+bind S colon 'sessionname '
+bind r eval "source $HOME/.screenrc" "echo '.screenrc reloaded!'"
+
+# For remote server
+# escape ^t^t
+# caption always "%{= Wk}%-w%{=b rW}%n %t%{= Wk}%+w %=%{=b Wk}[%0`]{-}"
+# backtick 0 60 60 bash -c 'screen -ls | grep --color=no -o "$PPID[^[:space:]]*"'
+# multiuser on
+# acladd $USER
