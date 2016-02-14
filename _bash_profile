@@ -3,10 +3,10 @@ if [ -x "/opt/local/bin/port" ]; then
 fi
 
 if command -v brew >/dev/null 2>&1; then
-    export PATH="$(brew --prefix)/bin:$brew_prefix/sbin:$PATH"
-    if [ -f $(brew --prefix)/etc/bash_completion ]; then
-        . $(brew --prefix)/etc/bash_completion
-    fi
+    BREW_PREFIX=`brew --prefix`
+    export PATH="$BREW_PREFIX/bin:$brew_prefix/sbin:$PATH"
+    [ -f "$BREW_PREFIX/etc/bash_completion" ] && . "$BREW_PREFIX/etc/bash_completion"
+    [ -f "$BREW_PREFIX/etc/bash_completion.d/git-prompt.sh" ] && . "$BREW_PREFIX/etc/bash_completion.d/git-prompt.sh"
 fi
 
 if [ -d "$HOME/Library/Android/sdk" ]; then
