@@ -1,0 +1,4 @@
+private IEnumerator $1() {
+  $0
+  yield break;
+}

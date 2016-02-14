@@ -10,15 +10,13 @@
 (when (boundp 'package-pinned-packages)
   (setq package-pinned-packages
         '(
-          (editorconfig . "melpa-stable")
           (elixir-mode . "melpa-stable")
-          (helm . "melpa-stable")
           )))
 
-(defvar my/installing-packages
+(defvar my-installing-packages
   '(
     ag
-    auto-complete
+    company
     csharp-mode
     dracula-theme
     editorconfig
@@ -27,26 +25,29 @@
     enh-ruby-mode
     exec-path-from-shell
     flycheck
+    ggtags
     helm
     helm-ag
-    helm-gtags
     helm-projectile
     hlinum
     js2-mode
     markdown-mode
+    magit
     omnisharp
     php-mode
     projectile
+    recentf-ext
     ruby-electric
     s
-    spacegray-theme
+    smartparens
+    typescript-mode
     wgrep-ag
     yasnippet
     ))
 
 (package-initialize)
 
-(let ((not-installed (loop for x in my/installing-packages
+(let ((not-installed (loop for x in my-installing-packages
                            when (not (package-installed-p x))
                            collect x)))
   (when not-installed

@@ -1,7 +1,7 @@
 (add-to-list 'interpreter-mode-alist '("ruby" . enh-ruby-mode))
 
 (add-hook 'enh-ruby-mode-hook '(lambda ()
-                                 (ruby-electric-mode t)
+                                 ;; (ruby-electric-mode t)
                                  ;; (inf-ruby-keys)
                                  ;; (add-to-list 'electric-pair-pairs '(?| . ?|))
                                  ))
