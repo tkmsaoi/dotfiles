@@ -3,9 +3,12 @@
 
 (helm-mode 1)
 
+(setq helm-mode-fuzzy-match t)
+(setq helm-split-window-default-side 'other)
+
 (add-to-list 'helm-completing-read-handlers-alist '(find-file . nil))
 
-(setq helm-mode-fuzzy-match t)
-;; (setq helm-M-x-fuzzy-match t)
-;; (setq helm-buffers-fuzzy-matching t)
-(setq helm-split-window-default-side 'other)
+(defadvice helm-ff-kill-or-find-buffer-fname (around execute-only-if-exist activate)
+  "Execute command only if CANDIDATE exists"
+  (when (file-exists-p candidate)
+    ad-do-it))

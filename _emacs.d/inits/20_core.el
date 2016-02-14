@@ -39,7 +39,7 @@
 (tool-bar-mode 0)
 
 ;; Scroll bar
-;; (scroll-bar-mode 0)
+(scroll-bar-mode 0)
 
 ;; Fringe
 (fringe-mode 0)
@@ -77,3 +77,61 @@
 (autoload 'ansi-color-for-comint-mode-on "ansi-color"
   "Set `ansi-color-for-comint-mode' to t." t)
 (add-hook 'comint-mode-hook (lambda () (setq comint-process-echoes t)))
+
+
+;; Mode Line
+
+(setq-default mode-line-format
+      '(
+       "%e"
+       mode-line-front-space
+
+       mode-line-mule-info
+       mode-line-modified
+       mode-line-remote
+
+       mode-line-frame-identification
+       mode-line-buffer-identification
+       "    "
+
+       mode-line-position
+       "  "
+
+       mode-line-modes
+       "  "
+
+       (vc-mode vc-mode)
+
+       ;; mode-line-misc-info
+
+       mode-line-end-spaces
+       ))
+
+(defvar my-mode-line-mode-alist
+  '(
+    (abbrev-mode . "")
+    (company-mode . "")
+    (flycheck-mode . "+fc")
+    (ggtags-mode . "+gg")
+    (helm-mode . "")
+    (omnisharp-mode . "+os")
+    (projectile-mode . "")
+    (smartparens-mode . "")
+    (yas-minor-mode . "")
+
+    (csharp-mode . "C#")
+    (dired-mode . "Dired")
+    (php-mode . "PHP")
+    ))
+
+(defun my-modify-mode-line-modes ()
+  (interactive)
+  (loop for (mode . mode-str) in my-mode-line-mode-alist
+        do
+        (let ((old-mode-str (cdr (assq mode minor-mode-alist))))
+          (when old-mode-str
+            (setcar old-mode-str mode-str))
+          (when (eq mode major-mode)
+            (setq mode-name mode-str)))))
+
+(add-hook 'after-change-major-mode-hook 'my-modify-mode-line-modes)
