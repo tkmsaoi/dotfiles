@@ -7,6 +7,10 @@ alias be='bundle exec'
 alias install-composer='curl -sS https://getcomposer.org/installer | php'
 alias composer='php composer.phar'
 
+if command -v gtags >/dev/null 2>&1; then
+    alias gtags='gtags --gtagslabel=pygments'
+fi
+
 if command -v gdircolors >/dev/null 2>&1; then
     alias dircolors='gdircolors'
     alias ls='gls --color=auto'
