@@ -1,7 +1,4 @@
-(add-hook 'python-mode-hook 'enh-ruby-mode)
-(add-hook 'python-mode-hook 'php-mode)
-
-;; (setq flycheck-display-errors-function nil)
+(add-hook 'php-mode-hook 'flycheck-mode)
 
 (eval-after-load 'flycheck
   '(custom-set-variables

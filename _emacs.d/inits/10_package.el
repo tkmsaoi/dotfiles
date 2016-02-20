@@ -15,6 +15,7 @@
 
 (defvar my-installing-packages
   '(
+    ac-php
     ag
     company
     csharp-mode
