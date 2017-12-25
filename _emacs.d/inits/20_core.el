@@ -69,9 +69,11 @@
     ad-do-it))
 
 ;; Cursor blinking
-;; (blink-cursor-mode 0)
+(blink-cursor-mode 0)
 
-;; Window alpha
+;; Window
+(add-to-list 'default-frame-alist '(width . 100))
+(add-to-list 'default-frame-alist '(height . 45))
 (add-to-list 'default-frame-alist '(alpha . (90 90 90 90)))
 
 (autoload 'ansi-color-for-comint-mode-on "ansi-color"

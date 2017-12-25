@@ -4,8 +4,7 @@ alias less='less -MR'
 alias sudo='sudo '
 alias be='bundle exec'
 
-alias install-composer='curl -sS https://getcomposer.org/installer | php'
-alias composer='php composer.phar'
+alias au='find . -type f -name'
 
 if command -v gtags >/dev/null 2>&1; then
     alias gtags='gtags --gtagslabel=pygments'
@@ -29,6 +28,10 @@ if [ -n "$color" ]; then
     alias egrep='egrep --color=auto'
 fi
 unset color
+
+if command -v diffstat >/dev/null 2>&1; then
+    alias diffstat='diffstat -C'
+fi
 
 if command -v colordiff >/dev/null 2>&1; then
     alias diff='colordiff'

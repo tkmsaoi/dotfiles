@@ -2,10 +2,10 @@
 .metadata/
 .sass-cache/
 .vagrant/
-tmp/
+#tmp/
 logs/
-node_modules/
-vendor/
+#node_modules/
+#vendor/
 
 *~
 *.a
@@ -30,7 +30,6 @@ vendor/
 .dir-locals.el
 .DS_Store
 .projectile
-composer.phar
 GPATH*
 GRTAGS*
 GTAGS*

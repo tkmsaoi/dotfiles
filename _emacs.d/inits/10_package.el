@@ -27,6 +27,7 @@
     exec-path-from-shell
     flycheck
     ggtags
+    groovy-mode
     helm
     helm-ag
     helm-projectile
@@ -43,6 +44,7 @@
     smartparens
     typescript-mode
     wgrep-ag
+    yaml-mode
     yasnippet
     ))
 

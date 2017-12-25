@@ -6,9 +6,6 @@ defutf8 on
 
 nethack on
 
-logfile "$HOME/.screen.d/log/%S-%Y%m%d-%n.log"
-deflog on
-
 startup_message off
 
 caption always "%{= kW}%-w%{+b Wk}%n %t%{-}%+w"
@@ -24,7 +21,7 @@ escape ^g^g
 bind 0 remove
 bind 1 only
 bind 2 split
-bind 3 split -v
+#bind 3 split -v
 bind o focus
 bind b windowlist -b
 bind N colon 'number '
@@ -33,7 +30,7 @@ bind r eval "source $HOME/.screenrc" "echo '.screenrc reloaded!'"
 
 # For remote server
 # escape ^t^t
-# caption always "%{= Wk}%-w%{=b rW}%n %t%{= Wk}%+w %=%{=b Wk}[%0`]{-}"
+# caption always "%{= Wk}%-w%{=b rW}%n %t%{= Wk}%+w"
 # backtick 0 60 60 bash -c 'screen -ls | grep --color=no -o "$PPID[^[:space:]]*"'
 # multiuser on
 # acladd $USER
