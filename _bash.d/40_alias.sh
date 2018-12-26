@@ -44,3 +44,8 @@ fi
 if command -v subl >/dev/null 2>&1; then
     alias subl='subl -a'
 fi
+
+if command -v pbcopy >/dev/null 2>&1; then
+  alias pbc='pbcopy'
+  alias pbp='pbpaste'
+fi
