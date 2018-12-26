@@ -3,7 +3,7 @@
 .sass-cache/
 .vagrant/
 #tmp/
-logs/
+#logs/
 #node_modules/
 #vendor/
 

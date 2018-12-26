@@ -1,5 +1,5 @@
 [core]
-  excludesfile = ~/.gitignore
+	excludesfile = $HOME/.gitignore
 	editor = vim -c \"set fenc=utf-8\"
 [color]
 	ui = auto
