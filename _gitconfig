@@ -1,5 +1,5 @@
 [core]
-	excludesfile = $HOME/.gitignore
+	excludesfile = ~/.gitignore
 	editor = vim -c \"set fenc=utf-8\"
 [color]
 	ui = auto
@@ -14,8 +14,10 @@
   s = status
   t = tag
   co = checkout
+  cp = cherry-pick
   pl = pull
   ps = push
+  sm = submodule
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 	tree = log --graph --pretty='format:%C(yellow)%h%Creset %s %Cgreen(%an)%Creset %Cred%d%Creset'
 	trnm = log --no-merges --graph --pretty='format:%C(yellow)%h%Creset %s %Cgreen(%an)%Creset %Cred%d%Creset'
