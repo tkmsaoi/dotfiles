@@ -3,10 +3,6 @@
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
 (add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/") t)
 
-;; For important compatibility libraries like cl-lib
-(when (< emacs-major-version 24)
-  (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
-
 (when (boundp 'package-pinned-packages)
   (setq package-pinned-packages
         '(
@@ -33,9 +29,9 @@
     helm-projectile
     hlinum
     markdown-mode
-    magit
     omnisharp
     php-mode
+    prettier-js
     projectile
     recentf-ext
     rjsx-mode

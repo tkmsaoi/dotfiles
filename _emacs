@@ -5,15 +5,7 @@
 ;; You may delete these explanatory comments.
 (package-initialize)
 
-(defun add-load-path-recursive (path)
-  (dolist (dir (let ((dir (expand-file-name path)))
-                 (list dir (format "%s%d" dir emacs-major-version))))
-    (when (and (stringp dir) (file-directory-p dir))
-      (let ((default-directory dir))
-        (setq load-path (cons default-directory load-path))
-        (normal-top-level-add-subdirs-to-load-path)))))
-
-(add-load-path-recursive "~/.emacs.d/site-lisp")
+(add-to-list 'load-path "~/.emacs.d/site-lisp")
 
 (require 'init-loader)
 (init-loader-load "~/.emacs.d/inits")
@@ -30,10 +22,10 @@
  '(package-selected-packages
    (quote
     (yasnippet yaml-mode wgrep-ag typescript-mode smartparens s ruby-electric recentf-ext projectile php-mode omnisharp magit markdown-mode js2-mode hlinum helm-projectile helm-ag helm groovy-mode ggtags flycheck exec-path-from-shell enh-ruby-mode emmet-mode elixir-mode editorconfig dracula-theme csharp-mode company ag ac-php))))
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
-(put 'upcase-region 'disabled nil)

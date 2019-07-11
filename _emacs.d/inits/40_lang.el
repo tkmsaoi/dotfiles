@@ -30,15 +30,15 @@
 ;; JavaScript
 ;;---
 
-(setq js2-basic-offset 2)
+;; (setq js2-basic-offset 2)
 
 (add-hook 'rjsx-mode-hook
           (lambda ()
+            (setq js-indent-level 2)
             (setq js2-strict-trailing-comma-warning nil)))
 
-; javascript-mode
-;; (autoload 'javascript-mode "javascript" nil t)
-(setq js-indent-level 2)
+(require 'prettier-js)
+(add-hook 'js2-mode-hook 'prettier-js-mode)
 
 ;;
 ;; Ruby
