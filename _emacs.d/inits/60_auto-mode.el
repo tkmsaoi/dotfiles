@@ -3,6 +3,8 @@
 (add-to-list 'auto-mode-alist '("\\.mjs\\'" . rjsx-mode))
 (add-to-list 'auto-mode-alist '("\\.json\\'" . rjxs-mode))
 
+(add-to-list 'auto-mode-alist '("\\.mm\\'" . objc-mode))
+
 (add-to-list 'auto-mode-alist '("\\.handlebars\\'" . html-mode))
 
 (add-to-list 'auto-mode-alist '("\\.txt\\'" . markdown-mode))

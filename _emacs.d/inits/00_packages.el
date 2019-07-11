@@ -33,6 +33,7 @@
     php-mode
     prettier-js
     projectile
+    protobuf-mode
     recentf-ext
     rjsx-mode
     ruby-electric
