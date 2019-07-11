@@ -37,6 +37,10 @@
             (setq js-indent-level 2)
             (setq js2-strict-trailing-comma-warning nil)))
 
+(add-hook 'json-mode-hook
+          (lambda ()
+            (setq js-indent-level 2)))
+
 (require 'prettier-js)
 (add-hook 'js2-mode-hook 'prettier-js-mode)
 

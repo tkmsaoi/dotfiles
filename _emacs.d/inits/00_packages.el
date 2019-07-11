@@ -15,6 +15,7 @@
     ag
     company
     csharp-mode
+    dockerfile-mode
     dracula-theme
     editorconfig
     elixir-mode
@@ -28,6 +29,7 @@
     helm-ag
     helm-projectile
     hlinum
+    json-mode
     markdown-mode
     omnisharp
     php-mode
