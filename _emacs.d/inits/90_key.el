@@ -3,6 +3,8 @@
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (global-set-key (kbd "C-x a") 'rename-buffer)
 (global-set-key (kbd "C-x A") 'my-rename-system-buffer)
+(global-set-key (kbd "C-x C-n") 'my-new-untitled-buffer)
+
 
 (global-set-key (kbd "M-{") 'previous-buffer)
 (global-set-key (kbd "M-}") 'next-buffer)
