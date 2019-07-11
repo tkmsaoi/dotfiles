@@ -1,7 +1,6 @@
 setopt AUTO_CD
 setopt AUTO_LIST
 setopt AUTO_MENU
-setopt AUTO_PARAM_KEYS
 setopt AUTO_PUSHD
 setopt EXTENDED_HISTORY
 setopt HIST_FIND_NO_DUPS
@@ -201,7 +200,11 @@ fi
 #---
 
 if command -v anyenv >/dev/null 2>&1; then
-    eval "$(anyenv init -)"
+  eval "$(anyenv init -)"
+fi
+
+if command -v nodenv >/dev/null 2>&1; then
+  path=(`npm bin -g` $path)
 fi
 
 #---
