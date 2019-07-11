@@ -1,7 +1,0 @@
-IRB.conf[:AUTO_INDENT] = true
-IRB.conf[:PROMPT][:D] = {
-  :PROMPT_I => 'irb> ',
-  :PROMPT_C => '>>>> ',
-  :RETURN => "=> %s\n"
-}
-IRB.conf[:PROMPT_MODE] = :D
