@@ -16,6 +16,8 @@ setopt PROMPT_SUBST
 setopt PUSHD_IGNORE_DUPS
 setopt SHARE_HISTORY
 
+unsetopt AUTO_PARAM_KEYS
+
 #
 # Variables
 #---
@@ -29,11 +31,11 @@ PROMPT='%F{cyan}%~%f ${vcs_info_msg_0_}
 
 path=(~/local/bin $path)
 
-cdpath=(.. ~ ~/Work)
-
-if [ -d "$HOME/Library/Android/sdk" ]; then
-  export PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
+if [ -d ~/Library/Android/sdk ]; then
+  path=(~/Library/Android/sdk/platform-tools $path)
 fi
+
+cdpath=(.. ~ ~/Work)
 
 #
 # Functions
@@ -131,6 +133,10 @@ chpwd() {
   __refresh_title
 }
 
+precmd () {
+  vcs_info
+}
+
 #
 # Completion
 #---
@@ -140,9 +146,9 @@ autoload -Uz compinit
 LISTMAX=300
 
 zstyle ':completion::complete:*' use-cache true
-#zstyle ':completion:*:default' menu select=1
-zstyle ':completion:*' menu select interactive
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+zstyle ':completion:*:default' menu select=2
+#zstyle ':completion:*' menu select interactive
+zstyle ':completion:*' list-separator ''
 
 if [ -e /usr/local/share/zsh-completions ]; then
   fpath=(/usr/local/share/zsh-completions $fpath)
@@ -170,8 +176,6 @@ zstyle ':vcs_info:git*' unstagedstr "*"
 zstyle ':vcs_info:git*' formats "%F{250}%b%c%u%f"
 zstyle ':vcs_info:git*' actionformats '%F{250}%b|%a%f'
 
-precmd () { vcs_info }
-
 #
 # zsh-autosuggestions
 #---
@@ -188,10 +192,6 @@ if [ -e /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; 
   source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 
-if [ -e ~/.zshrc.local ]; then
-  source ~/.zshrc.local
-fi
-
 #
 # fzf
 #---
@@ -206,10 +206,14 @@ if command -v anyenv >/dev/null 2>&1; then
   eval "$(anyenv init -)"
 fi
 
-if command -v nodenv >/dev/null 2>&1; then
+if command -v npm >/dev/null 2>&1; then
   path=(`npm bin -g` $path)
 fi
 
 #---
+
+if [ -e ~/.zshrc.local ]; then
+  source ~/.zshrc.local
+fi
 
 typeset -U PATH FPATH CDPATH
