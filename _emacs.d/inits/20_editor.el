@@ -1,47 +1,33 @@
+(add-hook 'after-init-hook
+          '(lambda ()
+             (cd "~")
+             (dired "~")))
+
 (setq user-full-name "Takamasa Aoi")
 (setq user-mail-address "tkms.aoi@gmail.com")
 
-;;; Editor
-
 (setq make-backup-files nil)
 (setq auto-save-default nil)
-
-(add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
 (prefer-coding-system 'utf-8-unix)
 
 (setq-default tab-width 2)
 (setq-default indent-tabs-mode nil)
+(setq-default truncate-lines t)
+
 (setq indent-line-function 'indent-relative-maybe)
 
 (recentf-mode 1)
 
-;; abbrev
-(setq abbrev-mode nil)
-(setq default-abbrev-mode nil)
-(setq dabbrev-case-fold-search nil)
-
-;; (electric-pair-mode t)
-
-
-;;; Appearances
-
 ;; Startup message
 (setq inhibit-startup-message t)
 
-(global-font-lock-mode t)
 (setq resize-mini-windows nil)
 
-;; Menu bar
+;; 見た目はシンプルに
 (menu-bar-mode 0)
-
-;; Tool bar
 (tool-bar-mode 0)
-
-;; Scroll bar
 (scroll-bar-mode 0)
-
-;; Fringe
 (fringe-mode 0)
 
 ;; Mode line
@@ -49,8 +35,6 @@
 (line-number-mode t)
 (column-number-mode t)
 
-;; Truncate lines
-(setq-default truncate-lines t)
 
 ;; Paren highlighting
 (show-paren-mode t)
@@ -72,16 +56,13 @@
 (blink-cursor-mode 0)
 
 ;; Window
-(add-to-list 'default-frame-alist '(width . 100))
-(add-to-list 'default-frame-alist '(height . 45))
 (add-to-list 'default-frame-alist '(alpha . (90 90 90 90)))
+(add-to-list 'default-frame-alist '(width . 120))
+(add-to-list 'default-frame-alist '(height . 60))
 
-(autoload 'ansi-color-for-comint-mode-on "ansi-color"
-  "Set `ansi-color-for-comint-mode' to t." t)
-(add-hook 'comint-mode-hook (lambda () (setq comint-process-echoes t)))
-
-
+;;
 ;; Mode Line
+;;---
 
 (setq-default mode-line-format
       '(

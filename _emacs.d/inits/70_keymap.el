@@ -35,8 +35,7 @@
   (define-key company-active-map (kbd "C-n") 'company-select-next)
   (define-key company-active-map (kbd "C-p") 'company-select-previous)
   (define-key company-active-map [tab] 'company-complete-selection)
-  (define-key company-active-map (kbd "TAB") 'company-complete-selection)
-  )
+  (define-key company-active-map (kbd "TAB") 'company-complete-selection))
 
 ;; ggtags
 (with-eval-after-load 'ggtags
@@ -56,8 +55,7 @@
           (define-key map (kbd "f") 'ggtags-find-file)
           (define-key map (kbd "c") 'ggtags-create-tags)
           (define-key map (kbd "u") 'ggtags-update-tags)
-          map))
-  )
+          map)))
 
 ;; magit
 (global-set-key (kbd "C-c g") 'magit-status)

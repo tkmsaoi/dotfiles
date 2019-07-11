@@ -32,13 +32,13 @@
     helm-ag
     helm-projectile
     hlinum
-    js2-mode
     markdown-mode
     magit
     omnisharp
     php-mode
     projectile
     recentf-ext
+    rjsx-mode
     ruby-electric
     s
     smartparens
