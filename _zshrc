@@ -1,11 +1,21 @@
-setopt hist_ignore_dups
-setopt hist_ignore_all_dups
-setopt share_history
-setopt list_packed
-setopt prompt_subst
-setopt auto_cd
-setopt auto_pushd
-setopt no_beep
+setopt AUTO_CD
+setopt AUTO_LIST
+setopt AUTO_MENU
+setopt AUTO_PARAM_KEYS
+setopt AUTO_PUSHD
+setopt EXTENDED_HISTORY
+setopt HIST_FIND_NO_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_DUPS
+setopt HIST_NO_FUNCTIONS
+setopt HIST_REDUCE_BLANKS
+setopt HIST_SAVE_NO_DUPS
+setopt LIST_PACKED
+setopt MENU_COMPLETE
+setopt NO_BEEP
+setopt PROMPT_SUBST
+setopt PUSHD_IGNORE_DUPS
+setopt SHARE_HISTORY
 
 #
 # Variables
@@ -18,9 +28,10 @@ SAVEHIST=10000
 PROMPT='%F{cyan}%~%f ${vcs_info_msg_0_}
 %F{magenta}❯%f '
 
+path=(~/local/bin $path)
+
 cdpath=(.. ~ ~/Work)
 
-export PATH="./node_modules/.bin:$HOME/local/bin:$PATH"
 
 #
 # Functions
@@ -104,9 +115,18 @@ fi
 # Hooks
 #---
 
-echo -ne "\033]0;$(basename $PWD)\007"
-function chpwd() {
-  echo -ne "\033]0;$(basename $PWD)\007"
+__refresh_title() {
+  if [ "$PWD" = "$HOME" ]; then
+    title="~"
+  else
+    title="$(basename $PWD)"
+  fi
+  echo -ne "\033]0;$title\007"
+}
+
+__refresh_title
+chpwd() {
+  __refresh_title
 }
 
 #
@@ -115,7 +135,12 @@ function chpwd() {
 
 autoload -Uz compinit
 
-zstyle ':completion:*' list-colors ''
+LISTMAX=300
+
+zstyle ':completion::complete:*' use-cache true
+#zstyle ':completion:*:default' menu select=1
+zstyle ':completion:*' menu select interactive
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 if [ -e /usr/local/share/zsh-completions ]; then
   fpath=(/usr/local/share/zsh-completions $fpath)
@@ -123,6 +148,10 @@ fi
 
 if [ -e ~/.zsh.d/completions ]; then
   fpath=(~/.zsh.d/completions $fpath)
+fi
+
+if command -v brew >/dev/null 2>&1; then
+  fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
 fi
 
 compinit -u
@@ -174,3 +203,7 @@ fi
 if command -v anyenv >/dev/null 2>&1; then
     eval "$(anyenv init -)"
 fi
+
+#---
+
+typeset -U PATH FPATH CDPATH
