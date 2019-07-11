@@ -7,37 +7,6 @@ setopt auto_cd
 setopt auto_pushd
 setopt no_beep
 
-
-#
-# Completion
-#---
-
-autoload -Uz compinit
-
-zstyle ':completion:*' list-colors ''
-
-compinit -u
-
-if [ -e /usr/local/share/zsh-completions ]; then
-  fpath=(/usr/local/share/zsh-completions $fpath)
-fi
-
-
-#
-# vcs_info
-#---
-
-autoload -Uz vcs_info
-
-zstyle ':vcs_info:git*' check-for-changes true
-zstyle ':vcs_info:git*' stagedstr "*"
-zstyle ':vcs_info:git*' unstagedstr "*"
-zstyle ':vcs_info:git*' formats "%F{250}%b%c%u%f"
-zstyle ':vcs_info:git*' actionformats '%F{250}%b|%a%f'
-
-precmd () { vcs_info }
-
-
 #
 # Variables
 #---
@@ -51,8 +20,7 @@ PROMPT='%F{cyan}%~%f ${vcs_info_msg_0_}
 
 cdpath=(.. ~ ~/Work)
 
-export PATH="$HOME/local/bin:$PATH"
-
+export PATH="./node_modules/.bin:$HOME/local/bin:$PATH"
 
 #
 # Functions
@@ -79,7 +47,6 @@ if command -v pbcopy >/dev/null 2>&1; then
   alias pbf='pbfilter'
 fi
 
-
 #
 # Aliases
 #---
@@ -90,6 +57,8 @@ alias less='less -MR'
 alias sudo='sudo '
 alias be='bundle exec'
 alias findf='find . -type f -name'
+alias shake='sh ake'
+alias sqlite3='sqlite3 -column -header'
 
 if command -v gtags >/dev/null 2>&1; then
     alias gtags='gtags --gtagslabel=pygments'
@@ -132,13 +101,44 @@ if command -v pbcopy >/dev/null 2>&1; then
 fi
 
 #
+# Completion
+#---
+
+autoload -Uz compinit
+
+zstyle ':completion:*' list-colors ''
+
+if [ -e /usr/local/share/zsh-completions ]; then
+  fpath=(/usr/local/share/zsh-completions $fpath)
+fi
+
+if [ -e ~/.zsh.d/completions ]; then
+  fpath=(~/.zsh.d/completions $fpath)
+fi
+
+compinit -u
+
+#
+# vcs_info
+#---
+
+autoload -Uz vcs_info
+
+zstyle ':vcs_info:git*' check-for-changes true
+zstyle ':vcs_info:git*' stagedstr "*"
+zstyle ':vcs_info:git*' unstagedstr "*"
+zstyle ':vcs_info:git*' formats "%F{250}%b%c%u%f"
+zstyle ':vcs_info:git*' actionformats '%F{250}%b|%a%f'
+
+precmd () { vcs_info }
+
+#
 # zsh-autosuggestions
 #---
 
 if [ -e /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
   source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
-
 
 #
 # zsh-syntax-highlighting
@@ -150,4 +150,18 @@ fi
 
 if [ -e ~/.zshrc.local ]; then
   source ~/.zshrc.local
+fi
+
+#
+# fzf
+#---
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+#
+# anyenv
+#---
+
+if command -v anyenv >/dev/null 2>&1; then
+    eval "$(anyenv init -)"
 fi
