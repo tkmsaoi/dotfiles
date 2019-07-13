@@ -112,3 +112,9 @@
                           (setq sh-basic-offset 2)
                           (setq sh-indentation 2)
                           ))
+
+;;
+;; Markdown
+;;---
+
+(setq markdown-fontify-code-blocks-natively t)

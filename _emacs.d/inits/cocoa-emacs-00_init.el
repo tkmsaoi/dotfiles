@@ -2,23 +2,10 @@
 (setq ns-alternate-modifier 'super)
 (setq ns-pop-up-frames nil)
 
-(define-key global-map [?\¥] [?\\])
-(define-key global-map [?\C-¥] [?\C-\\])
-(define-key global-map [?\M-¥] [?\M-\\])
-(define-key global-map [?\C-\M-¥] [?\C-\M-\\])
-
-(global-set-key (kbd "M-<RET>") 'ns-toggle-fullscreen)
-
-(defun my-dired-open ()
-  (interactive)
-  (if (eq major-mode 'dired-mode)
-      (let ((fname (dired-get-filename)))
-        (start-process "open_ps" nil "open" fname)
-        (message "open %s" fname))))
-
-(add-hook 'dired-mode-hook
-          (lambda ()
-            (define-key dired-mode-map (kbd "C-<return>") 'my-dired-open)))
+(setq initial-frame-alist
+        (append
+         '((ns-transparent-titlebar . t)
+           (ns-appearance . dark))))
 
 ;; (set-face-attribute 'default nil
 ;;                     :family "Monaco"
@@ -32,3 +19,19 @@
       '((".*Hiragino_Kaku_Gothic_ProN.*" . 1.2)))
 
 (set-default-font "Monaco-10")
+
+(define-key global-map [?\¥] [?\\])
+(define-key global-map [?\C-¥] [?\C-\\])
+(define-key global-map [?\M-¥] [?\M-\\])
+(define-key global-map [?\C-\M-¥] [?\C-\M-\\])
+
+(defun my-dired-open ()
+  (interactive)
+  (if (eq major-mode 'dired-mode)
+      (let ((fname (dired-get-filename)))
+        (start-process "open_ps" nil "open" fname)
+        (message "open %s" fname))))
+
+(add-hook 'dired-mode-hook
+          (lambda ()
+            (define-key dired-mode-map (kbd "C-<return>") 'my-dired-open)))
