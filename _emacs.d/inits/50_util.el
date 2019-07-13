@@ -1,17 +1,7 @@
 ;;
-;; abbrev
-;;---
-
-;; NOTE: 脳死で入れてたけど不要説。一旦コメントアウトして様子見
-;; (setq abbrev-mode nil)
-;; (setq default-abbrev-mode nil)
-;; (setq dabbrev-case-fold-search nil)
-
-;;
 ;; dired
 ;;---
 
-;; (setq dired-listing-switches "-AFl --group-directories-first")
 (setq dired-recursive-copies 'always)
 (setq dired-recursive-deletes 'always)
 
@@ -76,23 +66,13 @@
 (add-hook 'emmet-mode-hook (lambda () (setq emmet-indentation 2)))
 
 ;;
-;; helm
+;; ivy/counsel
 ;;---
 
-(require 'helm)
-(require 'helm-config)
+(ivy-mode 1)
+(counsel-mode 1)
 
-(helm-mode 1)
-
-(setq helm-mode-fuzzy-match t)
-(setq helm-split-window-default-side 'other)
-
-(add-to-list 'helm-completing-read-handlers-alist '(find-file . nil))
-
-(defadvice helm-ff-kill-or-find-buffer-fname (around execute-only-if-exist activate)
-  "Execute command only if CANDIDATE exists"
-  (when (file-exists-p candidate)
-    ad-do-it))
+(all-the-icons-ivy-setup)
 
 ;;
 ;; EditorConfig

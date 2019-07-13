@@ -3,8 +3,8 @@
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (global-set-key (kbd "C-x a") 'rename-buffer)
 (global-set-key (kbd "C-x A") 'my-rename-system-buffer)
-(global-set-key (kbd "C-x C-n") 'my-new-untitled-buffer)
 
+(global-set-key (kbd "C-x C-n") 'my-new-untitled-buffer)
 
 (global-set-key (kbd "M-{") 'previous-buffer)
 (global-set-key (kbd "M-}") 'next-buffer)
@@ -15,14 +15,9 @@
 ;; dired
 ;; (define-key dired-mode-map "r" 'wdired-change-to-wdired-mode)
 
-;; helm
-(global-set-key (kbd "M-x") 'helm-M-x)
-(global-set-key (kbd "C-x b") 'helm-buffers-list)
-(global-set-key (kbd "C-c h a") 'helm-ag)
-(global-set-key (kbd "C-c h e") 'helm-recentf)
-;; (global-set-key (kbd "C-x C-f") 'helm-find-files)
-;; (define-key helm-find-files-map (kbd "TAB") 'helm-execute-persistent-action)
-;; (define-key helm-read-file-map (kbd "TAB") 'helm-execute-persistent-action)
+;; ivy/counsel
+(global-set-key (kbd "C-x C-r") 'counsel-recentf)
+(global-set-key (kbd "C-s") 'swiper)
 
 ;; ag
 (global-unset-key (kbd "M-s a"))

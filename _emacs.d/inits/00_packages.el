@@ -14,7 +14,9 @@
     ac-php
     ag
     all-the-icons
+    all-the-icons-ivy
     company
+    counsel
     csharp-mode
     dockerfile-mode
     doom-modeline
@@ -29,9 +31,6 @@
     flycheck-pos-tip
     ggtags
     groovy-mode
-    helm
-    helm-ag
-    helm-projectile
     hlinum
     json-mode
     markdown-mode
