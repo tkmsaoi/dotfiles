@@ -9,6 +9,8 @@
 (setq make-backup-files nil)
 (setq auto-save-default nil)
 
+(setq confirm-kill-emacs 'y-or-n-p)
+
 (prefer-coding-system 'utf-8-unix)
 
 (setq-default tab-width 2)
@@ -24,7 +26,6 @@
 
 (setq resize-mini-windows nil)
 
-;; 見た目はシンプルに
 (menu-bar-mode 0)
 (tool-bar-mode 0)
 (scroll-bar-mode 0)
@@ -64,40 +65,11 @@
 ;; Mode Line
 ;;---
 
-(setq-default mode-line-format
-      '(
-       "%e"
-       mode-line-front-space
-
-       mode-line-mule-info
-       mode-line-modified
-       mode-line-remote
-
-       mode-line-frame-identification
-       mode-line-buffer-identification
-       "    "
-
-       mode-line-position
-       "  "
-
-       mode-line-modes
-       "  "
-
-       (vc-mode vc-mode)
-
-       ;; mode-line-misc-info
-
-       mode-line-end-spaces
-       ))
-
 (defvar my-mode-line-mode-alist
   '(
     (abbrev-mode . "")
     (company-mode . "")
-    (flycheck-mode . "+fc")
-    (ggtags-mode . "+gg")
     (helm-mode . "")
-    (omnisharp-mode . "+os")
     (projectile-mode . "")
     (smartparens-mode . "")
     (yas-minor-mode . "")
@@ -105,6 +77,7 @@
     (csharp-mode . "C#")
     (dired-mode . "Dired")
     (php-mode . "PHP")
+    (typescript-mode . "TypeScript")
     ))
 
 (defun my-modify-mode-line-modes ()

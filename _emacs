@@ -1,4 +1,3 @@
-
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
@@ -18,11 +17,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(flycheck-display-errors-function (function flycheck-pos-tip-error-messages))
  '(package-selected-packages
    (quote
     (yasnippet yaml-mode wgrep-ag typescript-mode smartparens s ruby-electric recentf-ext projectile php-mode omnisharp magit markdown-mode js2-mode hlinum helm-projectile helm-ag helm groovy-mode ggtags flycheck exec-path-from-shell enh-ruby-mode emmet-mode elixir-mode editorconfig dracula-theme csharp-mode company ag ac-php))))
-
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

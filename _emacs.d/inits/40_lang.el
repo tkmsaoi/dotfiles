@@ -41,8 +41,18 @@
           (lambda ()
             (setq js-indent-level 2)))
 
-(require 'prettier-js)
-(add-hook 'js2-mode-hook 'prettier-js-mode)
+;; flycheck と競合するらしい
+(setq js2-include-browser-externs nil)
+(setq js2-mode-show-parse-errors nil)
+(setq js2-mode-show-strict-warnings nil)
+(setq js2-highlight-external-variables nil)
+(setq js2-include-jslint-globals nil)
+
+;;
+;; TypeScript
+;;---
+
+(setq typescript-indent-level 2)
 
 ;;
 ;; Ruby
@@ -87,10 +97,7 @@
 
 (require 'ac-php)
 
-(add-hook 'php-mode-hook 'flycheck-mode)
-(eval-after-load 'flycheck
-  '(custom-set-variables
-   '(flycheck-display-errors-function #'flycheck-pos-tip-error-messages)))
+;; (add-hook 'php-mode-hook 'flycheck-mode)
 
 (add-hook 'php-mode-hook
           (lambda ()

@@ -43,6 +43,30 @@
 (smartparens-global-mode t)
 
 ;;
+;; flycheck
+;;---
+
+(require 'flycheck)
+
+(add-hook 'after-init-hook #'global-flycheck-mode)
+
+(flycheck-add-mode 'javascript-eslint 'typescript-mode)
+
+(with-eval-after-load 'flycheck
+  (setq flycheck-disabled-checkers '(javascript-jshint javascript-jscs))
+  (setq flycheck-display-errors-function #'flycheck-display-error-messages)
+  (setq flycheck-display-errors-function 0.5)
+  (flycheck-pos-tip-mode))
+
+;;
+;; Prettier
+;;---
+
+(require 'prettier-js)
+(add-hook 'js2-mode-hook 'prettier-js-mode)
+(add-hook 'typescript-mode-hook 'prettier-js-mode)
+
+;;
 ;; emmet-mode
 ;;---
 

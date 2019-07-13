@@ -13,9 +13,12 @@
   '(
     ac-php
     ag
+    all-the-icons
     company
     csharp-mode
     dockerfile-mode
+    doom-modeline
+    doom-themes
     dracula-theme
     editorconfig
     elixir-mode
@@ -23,6 +26,7 @@
     enh-ruby-mode
     exec-path-from-shell
     flycheck
+    flycheck-pos-tip
     ggtags
     groovy-mode
     helm
