@@ -5,7 +5,9 @@
 (setq initial-frame-alist
         (append
          '((ns-transparent-titlebar . t)
-           (ns-appearance . dark))))
+           (ns-appearance . dark)
+           (internal-border-width . 4)
+           )))
 
 ;; (set-face-attribute 'default nil
 ;;                     :family "Monaco"
