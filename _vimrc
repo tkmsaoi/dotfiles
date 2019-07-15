@@ -20,7 +20,7 @@ set incsearch
 
 "set number
 set ruler
-set title
+"set title
 set showmatch
 set showmode
 
