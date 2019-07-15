@@ -69,9 +69,9 @@ alias ll='ls -Fl'
 alias la='ls -Fal'
 alias less='less -MR'
 alias sudo='sudo '
+alias g='git'
 alias be='bundle exec'
 alias findf='find . -type f -name'
-alias shake='sh ake'
 alias sqlite3='sqlite3 -column -header'
 
 if command -v gtags >/dev/null 2>&1; then
@@ -160,6 +160,8 @@ fi
 if command -v brew >/dev/null 2>&1; then
   fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
 fi
+
+compdef g='git'
 
 compinit -u
 
