@@ -20,7 +20,12 @@ module.exports = {
     borderColor: '#333',
 
     // custom CSS to embed
-    css: '',
+    css: `
+      .xterm-viewport::-webkit-scrollbar-thumb {
+				background-color: rgba(255, 255, 255, 0.06);
+			}
+    `,
+
     termCSS: '',
 
     showHamburgerMenu: '',
@@ -92,7 +97,11 @@ module.exports = {
     confirmQuit: true,
   },
 
-  plugins: ["hyper-dracula", "hyper-opacity", "hyper-confirm"],
+  plugins: [
+    "hyper-dracula",
+    "hyper-opacity",
+    "hyper-confirm"
+  ],
 
   localPlugins: [],
 
