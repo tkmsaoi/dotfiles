@@ -45,6 +45,7 @@
     s
     smartparens
     typescript-mode
+    web-mode
     wgrep-ag
     yaml-mode
     yasnippet
