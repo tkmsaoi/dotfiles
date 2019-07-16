@@ -167,9 +167,9 @@ if command -v brew >/dev/null 2>&1; then
   fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
 fi
 
-compdef g='git'
-
 compinit -u
+
+compdef g='git'
 
 #
 # vcs_info
