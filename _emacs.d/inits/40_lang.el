@@ -35,7 +35,9 @@
 (add-hook 'rjsx-mode-hook
           (lambda ()
             (setq js-indent-level 2)
-            (setq js2-strict-trailing-comma-warning nil)))
+            (setq js2-strict-trailing-comma-warning nil)
+            (setq js-switch-indent-offset 2)
+            ))
 
 (add-hook 'json-mode-hook
           (lambda ()
