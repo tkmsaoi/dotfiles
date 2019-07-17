@@ -34,7 +34,7 @@ if [ -d ~/Library/Android/sdk ]; then
   path=(~/Library/Android/sdk/platform-tools $path)
 fi
 
-cdpath=(.. ~ ~/Work)
+cdpath=(~/Work)
 
 #
 # Functions
