@@ -16,12 +16,14 @@
   co = checkout
   cp = cherry-pick
   pl = pull
-  ps = push
+  ps = push -u
   sm = submodule
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 	tree = log --graph --pretty='format:%C(yellow)%h%Creset %s %Cgreen(%an)%Creset %Cred%d%Creset'
 	trnm = log --no-merges --graph --pretty='format:%C(yellow)%h%Creset %s %Cgreen(%an)%Creset %Cred%d%Creset'
 	chase = branch -avv
+  au = update-index --assume-unchanged
+  nau = update-index --no-assume-unchanged
 [include]
 	path = ~/.gitconfig.local
 [gc]
@@ -39,3 +41,5 @@
 	writeBitmaps = true
 [pager]
 	status = true
+[user]
+	name = Takamasa Aoi
