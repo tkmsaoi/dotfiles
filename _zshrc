@@ -34,6 +34,10 @@ if [ -d ~/Library/Android/sdk ]; then
   path=(~/Library/Android/sdk/platform-tools $path)
 fi
 
+if [ -d /usr/local/opt/mysql@5.7/bin ]; then
+  path=(/usr/local/opt/mysql@5.7/bin $path)
+fi
+
 cdpath=(~/Work)
 
 #
@@ -130,11 +134,13 @@ __refresh_title() {
 __refresh_title
 chpwd() {
   __refresh_title
-
-  if command -v tree >/dev/null 2>&1; then
-    tree -L 1 -C --noreport | awk 'NR >= 2'
-  else
-    ls
+  
+  if tty -s; then
+    if command -v tree >/dev/null 2>&1; then
+      tree -L 1 -C --noreport | awk 'NR >= 2'
+    else
+      ls
+    fi
   fi
 }
 
