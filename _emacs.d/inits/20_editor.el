@@ -56,6 +56,10 @@
 ;; Cursor blinking
 (blink-cursor-mode 0)
 
+;; Mouse
+(setq mouse-wheel-scroll-amount '(1 ((shift) . 1)))
+(setq mouse-wheel-progressive-speed nil)
+
 ;; Window
 (add-to-list 'default-frame-alist '(alpha . (90 90 90 90)))
 (add-to-list 'default-frame-alist '(width . 120))
