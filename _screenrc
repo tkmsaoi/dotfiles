@@ -17,20 +17,17 @@ hardstatus ignore
 vbell off
 bell_msg ""
 
-escape ^g^g
+escape ^t^t
 bind 0 remove
 bind 1 only
 bind 2 split
-#bind 3 split -v
 bind o focus
 bind b windowlist -b
 bind N colon 'number '
 bind S colon 'sessionname '
 bind r eval "source $HOME/.screenrc" "echo '.screenrc reloaded!'"
 
-# For remote server
-# escape ^t^t
-# caption always "%{= Wk}%-w%{=b rW}%n %t%{= Wk}%+w"
-# backtick 0 60 60 bash -c 'screen -ls | grep --color=no -o "$PPID[^[:space:]]*"'
-# multiuser on
-# acladd $USER
+caption always "%{= Wk}%-w%{=b rW}%n %t%{= Wk}%+w"
+backtick 0 60 60 bash -c 'screen -ls | grep --color=no -o "$PPID[^[:space:]]*"'
+multiuser on
+acladd $USER
