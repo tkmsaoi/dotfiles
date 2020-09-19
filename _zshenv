@@ -1,0 +1,7 @@
+path=(/usr/local/bin $path)
+
+if [ -d ~/Library/Android/sdk ]; then
+  path=(~/Library/Android/sdk/platform-tools $path)
+fi
+
+path=(~/local/bin $path)

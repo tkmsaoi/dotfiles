@@ -1,4 +1,4 @@
-setopt AUTO_CD
+asetopt AUTO_CD
 setopt AUTO_LIST
 setopt AUTO_MENU
 unsetopt AUTO_PARAM_KEYS
@@ -27,16 +27,6 @@ SAVEHIST=10000
 
 PROMPT='%F{cyan}%~%f ${vcs_info_msg_0_}
 %F{magenta}❯%f '
-
-path=(~/local/bin $path)
-
-if [ -d ~/Library/Android/sdk ]; then
-  path=(~/Library/Android/sdk/platform-tools $path)
-fi
-
-if [ -d /usr/local/opt/mysql@5.7/bin ]; then
-  path=(/usr/local/opt/mysql@5.7/bin $path)
-fi
 
 cdpath=(~/Work)
 
@@ -77,18 +67,16 @@ alias g='git'
 alias be='bundle exec'
 alias findf='find . -type f -name'
 alias sqlite3='sqlite3 -column -header'
+alias du1='du -h -d 1'
 
 if command -v gtags >/dev/null 2>&1; then
     alias gtags='gtags --gtagslabel=pygments'
 fi
 
-if command -v gdircolors >/dev/null 2>&1; then
-    alias dircolors='gdircolors'
-    alias ls='gls --color=auto'
-elif command -v dircolors >/dev/null 2>&1; then
-    alias ls='ls --color=auto'
-elif [ "$(uname)" = "Darwin" ]; then
-    alias ls='ls -G'
+if command -v exa >/dev/null 2>&1; then
+    alias ls='exa'
+    alias ll='exa -lh --git'
+    alias la='exa -lah --git'
 fi
 
 case "$TERM" in

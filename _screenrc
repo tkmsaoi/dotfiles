@@ -1,5 +1,6 @@
 termcapinfo xterm* ti@:te@
-term xterm
+#term xterm
+term xterm-256color
 defscrollback 10000
 shell -$SHELL
 defutf8 on
@@ -8,7 +9,10 @@ nethack on
 
 startup_message off
 
-caption always "%{= kW}%-w%{+b Wk}%n %t%{-}%+w"
+caption always "%{= Wk}%-w%{=b rW}%n %t%{= Wk}%+w"
+backtick 0 60 60 bash -c 'screen -ls | grep --color=no -o "$PPID[^[:space:]]*"'
+multiuser on
+acladd $USER
 sorendition "= yk"
 
 hardstatus off

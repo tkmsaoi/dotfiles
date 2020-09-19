@@ -1,7 +1,9 @@
 (add-hook 'after-init-hook
           '(lambda ()
              (cd "~")
-             (dired "~")))
+             (dired "~")
+             (exec-path-from-shell-initialize)
+             ))
 
 (setq user-full-name "Takamasa Aoi")
 (setq user-mail-address "tkms.aoi@gmail.com")

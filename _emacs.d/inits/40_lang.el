@@ -57,6 +57,18 @@
 (setq typescript-indent-level 2)
 
 ;;
+;; web-mode
+;;---
+
+(add-hook 'web-mode-hook
+          (lambda ()
+            (setq web-mode-markup-indent-offset 2)
+            (setq web-mode-css-indent-offset 2)
+            (setq web-mode-code-indent-offset 2)
+            (setq web-mode-sql-indent-offset 2)
+            ))
+
+;;
 ;; Ruby
 ;;---
 

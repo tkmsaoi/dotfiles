@@ -164,12 +164,6 @@
 (recentf-mode 1)
 
 ;;
-;; exec-path-from-shell
-;;---
-
-(exec-path-from-shell-initialize)
-
-;;
 ;; hlinum
 ;;---
 
