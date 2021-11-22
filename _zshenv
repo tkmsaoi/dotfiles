@@ -4,4 +4,8 @@ if [ -d ~/Library/Android/sdk ]; then
   path=(~/Library/Android/sdk/platform-tools $path)
 fi
 
+if [ -d /opt/homebrew/bin ]; then
+  path=(/opt/homebrew/bin $path)
+fi
+
 path=(~/local/bin $path)
