@@ -43,3 +43,5 @@
 	status = true
 [user]
 	name = Takamasa Aoi
+[commit]
+	cleanup = scissors
