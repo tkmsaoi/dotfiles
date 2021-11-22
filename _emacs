@@ -18,8 +18,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   (quote
-    (yasnippet yaml-mode wgrep-ag typescript-mode smartparens s ruby-electric recentf-ext projectile php-mode omnisharp magit markdown-mode js2-mode hlinum helm-projectile helm-ag helm groovy-mode ggtags flycheck exec-path-from-shell enh-ruby-mode emmet-mode elixir-mode editorconfig dracula-theme csharp-mode company ag ac-php))))
+   '(yasnippet yaml-mode wgrep-ag typescript-mode smartparens s ruby-electric recentf-ext projectile php-mode omnisharp magit markdown-mode js2-mode hlinum helm-projectile helm-ag helm groovy-mode ggtags flycheck exec-path-from-shell enh-ruby-mode emmet-mode elixir-mode editorconfig dracula-theme csharp-mode company ag ac-php)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
