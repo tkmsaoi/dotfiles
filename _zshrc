@@ -1,4 +1,4 @@
-asetopt AUTO_CD
+setopt AUTO_CD
 setopt AUTO_LIST
 setopt AUTO_MENU
 unsetopt AUTO_PARAM_KEYS
