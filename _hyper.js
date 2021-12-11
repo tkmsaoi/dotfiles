@@ -120,7 +120,5 @@ module.exports = {
     "hyperterm-tabs"
   ],
 
-  localPlugins: ["hyper-bgtext"],
-
   keymaps: {}
 };
