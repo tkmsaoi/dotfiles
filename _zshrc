@@ -25,9 +25,6 @@ HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 
-PROMPT='%F{cyan}%~%f ${vcs_info_msg_0_}
-%F{magenta}❯%f '
-
 cdpath=(~/Work)
 
 #
@@ -68,10 +65,6 @@ alias be='bundle exec'
 alias findf='find . -type f -name'
 alias sqlite3='sqlite3 -column -header'
 alias du1='du -h -d 1'
-
-if command -v gtags >/dev/null 2>&1; then
-    alias gtags='gtags --gtagslabel=pygments'
-fi
 
 if command -v exa >/dev/null 2>&1; then
     alias ls='exa'
@@ -132,10 +125,6 @@ chpwd() {
   fi
 }
 
-precmd () {
-  vcs_info
-}
-
 #
 # Completion
 #---
@@ -164,18 +153,6 @@ fi
 compinit -u
 
 compdef g='git'
-
-#
-# vcs_info
-#---
-
-autoload -Uz vcs_info
-
-zstyle ':vcs_info:git*' check-for-changes true
-zstyle ':vcs_info:git*' stagedstr "*"
-zstyle ':vcs_info:git*' unstagedstr "*"
-zstyle ':vcs_info:git*' formats "%F{250}%b%c%u%f"
-zstyle ':vcs_info:git*' actionformats '%F{250}%b|%a%f'
 
 #
 # zsh-autosuggestions
@@ -215,6 +192,12 @@ fi
 
 if [ -e ~/.zshrc.local ]; then
   source ~/.zshrc.local
+fi
+
+#---
+
+if type starship > /dev/null; then
+  #eval "$(starship init zsh)"
 fi
 
 typeset -U PATH FPATH CDPATH
