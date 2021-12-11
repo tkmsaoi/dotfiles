@@ -2,13 +2,6 @@ alias ll='ls -Fl'
 alias la='ls -Fal'
 alias less='less -MR'
 alias sudo='sudo '
-alias be='bundle exec'
-
-alias au='find . -type f -name'
-
-if command -v gtags >/dev/null 2>&1; then
-    alias gtags='gtags --gtagslabel=pygments'
-fi
 
 if command -v gdircolors >/dev/null 2>&1; then
     alias dircolors='gdircolors'
@@ -29,20 +22,12 @@ if [ -n "$color" ]; then
 fi
 unset color
 
-if command -v diffstat >/dev/null 2>&1; then
-    alias diffstat='diffstat -C'
-fi
-
 if command -v colordiff >/dev/null 2>&1; then
     alias diff='colordiff'
 fi
 
 if [ -x "/Applications/Emacs.app/Contents/MacOS/Emacs" ]; then
     alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs -nw'
-fi
-
-if command -v subl >/dev/null 2>&1; then
-    alias subl='subl -a'
 fi
 
 if command -v pbcopy >/dev/null 2>&1; then

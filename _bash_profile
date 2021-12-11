@@ -13,10 +13,6 @@ if [ -d "$HOME/Library/Android/sdk" ]; then
     export PATH="$HOME/Library/Android/sdk/tools:$HOME/Library/Android/sdk/platform-tools:$PATH"
 fi
 
-if [ -d "/Library/Java/Home" ]; then
-    export JAVA_HOME="/Library/Java/Home"
-fi
-
 export PATH="$HOME/local/games:$HOME/local/bin:$HOME/local/sbin:$PATH"
 export CFLAGS="-I$HOME/local/include"
 export LDFLAGS="-L$HOME/local/lib"
@@ -28,15 +24,5 @@ if [ -s /opt/local/etc/bash_completion ]; then
 elif [ -s /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
-
-if [ -d "$HOME/.rbenv/bin" ]; then
-    export PATH="$HOME/.rbenv/bin:$PATH"
-    eval "$(rbenv init -)"
-elif [ -s "$HOME/.rvm/scripts/rvm" ]; then
-    . "$HOME/.rvm/scripts/rvm"
-fi
-
-[ -s "$HOME/.nvm/nvm.sh" ] && . "$HOME/.nvm/nvm.sh"
-[ -s "$HOME/.phpbrew/bashrc" ] && . "$HOME/.phpbrew/bashrc"
 
 [ -s "$HOME/.bashrc" ] && . ~/.bashrc
