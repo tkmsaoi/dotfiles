@@ -1,4 +1,0 @@
-case $1
-when $2
-  $0
-end
