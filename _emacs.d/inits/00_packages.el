@@ -27,6 +27,7 @@
     emmet-mode
     enh-ruby-mode
     exec-path-from-shell
+    fish-mode
     flycheck
     flycheck-pos-tip
     ggtags
