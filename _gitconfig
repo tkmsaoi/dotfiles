@@ -49,6 +49,7 @@
 [user]
 	name = Takamasa Aoi
 [delta]
+  syntax-theme = Dracula
   navigate = true
   line-numbers = true
   side-by-side = true
