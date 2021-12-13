@@ -28,6 +28,7 @@
 	chase = branch -avv
   au = update-index --assume-unchanged
   nau = update-index --no-assume-unchanged
+  bd = branch --format='%(color:bold red)%(refname:short)%(color:reset)%0a%(color:cyan)%(committerdate:iso)%(color:reset) %(color:yellow)%(objectname:short)%(color:reset) %(contents:subject) %(color:green)(%(authorname))%(color:reset)%0a'
 [diff]
   colorMoved = default
 [commit]
