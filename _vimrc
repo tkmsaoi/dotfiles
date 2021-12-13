@@ -20,7 +20,6 @@ set ignorecase
 set smartcase
 set wrapscan
 
-set number
 set ruler
 set title
 set showmatch
