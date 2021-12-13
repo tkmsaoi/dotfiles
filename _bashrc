@@ -1,10 +1,73 @@
 [ -z "$PS1" ] && return
 
-for script in "$HOME"/.bash.d/*.sh; do
-    . "$script"
-done
-unset script
+#
+# Environment
+#---
+
+shopt -s histappend
+shopt -s checkwinsize
+
+HISTCONTROL=ignorespace
+HISTSIZE=1000
+HISTFILESIZE=2000
+PAGER=less
+EDITOR=vi
+
+#
+# Aliases
+#---
+
+alias ll='ls -Fl'
+alias la='ls -Fal'
+alias less='less -MR'
+alias sudo='sudo '
+alias g='git'
+alias d='docker'
+alias dc='docker-compose'
+alias pbc='pbcopy'
+alias pbp='pbpaste'
+
+if command -v gdircolors >/dev/null 2>&1; then
+    alias dircolors='gdircolors'
+    alias ls='gls --color=auto'
+elif command -v dircolors >/dev/null 2>&1; then
+    alias ls='ls --color=auto'
+elif [ "$(uname)" = "Darwin" ]; then
+    alias ls='ls -G'
+fi
+
+case "$TERM" in
+    xterm*|rxvt*) color=yes;;
+esac
+if [ -n "$color" ]; then
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+unset color
+
+if command -v colordiff >/dev/null 2>&1; then
+    alias diff='colordiff'
+fi
+
+#
+# Functions
+#---
+
+chmodd () {
+    find "${2:-.}" -type d -print | xargs chmod "$1"
+}
+
+chmodf () {
+    find "${2:-.}" -type f -print | xargs chmod "$1"
+}
+
+#---
 
 [ -s "$HOME/.bashrc.local" ] && . "$HOME/.bashrc.local"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+if command -v starship >/dev/null 2>&1; then
+    eval "$(starship init bash)"
+fi
