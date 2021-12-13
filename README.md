@@ -1,11 +1,6 @@
- dotfiles
-===
+# dotfiles
 
-My dotfiles
-
-
- Installation
----
+## Installation
 
 ```
 $ git clone https://github.com/tkmsaoi/dotfiles.git
