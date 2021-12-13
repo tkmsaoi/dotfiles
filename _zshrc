@@ -186,18 +186,6 @@ fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-#
-# anyenv
-#---
-
-if command -v anyenv >/dev/null 2>&1; then
-  eval "$(anyenv init -)"
-fi
-
-if command -v npm >/dev/null 2>&1; then
-  path=(`npm bin -g` $path)
-fi
-
 #---
 
 if [ -e ~/.zshrc.local ]; then
