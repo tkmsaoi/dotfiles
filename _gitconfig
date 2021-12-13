@@ -38,7 +38,6 @@
 	rebase = true
 [push]
 	default = current
-  # default = nothing
 [merge]
 	ff = false
 [pack]
