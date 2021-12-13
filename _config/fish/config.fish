@@ -4,9 +4,16 @@
 
 fish_add_path /usr/local/bin
 
-if type -q brew
-  fish_add_path (brew --prefix)/bin
-  fish_add_path (brew --prefix)/sbin
+begin
+  set brew_cmd
+  for dir in /opt/homebrew/bin /usr/local/bin
+    set brew_cmd $dir/brew
+    if test -x $brew_cmd
+      fish_add_path ($brew_cmd --prefix)/bin
+      fish_add_path ($brew_cmd --prefix)/sbin
+      break
+    end
+  end
 end
 
 fish_add_path $HOME/local/bin
