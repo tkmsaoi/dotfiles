@@ -1,5 +1,3 @@
-syntax on
-
 set nobackup
 
 set encoding=utf-8
@@ -42,3 +40,5 @@ set statusline+=[%{&fileformat}]
 set backspace=indent,eol,start
 
 nmap <ESC><ESC> ;nohlsearch<CR><ESC>
+
+syntax enable
