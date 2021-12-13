@@ -1,5 +1,4 @@
 termcapinfo xterm* ti@:te@
-#term xterm
 term xterm-256color
 defscrollback 10000
 shell -$SHELL
