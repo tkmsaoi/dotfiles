@@ -18,8 +18,8 @@
 *.o
 *.old
 *.pid
-*.so
-*.so.*
+#*.so
+#*.so.*
 *.sublime-workspace
 *.swp
 \#*\#

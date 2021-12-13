@@ -11,3 +11,7 @@ if status is-interactive
     starship init fish | source
   end
 end
+
+if test -e ~/.config/fish/config.fish.local
+  source ~/.config/fish/config.fish.local
+end

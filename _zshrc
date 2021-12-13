@@ -56,15 +56,21 @@ fi
 # Aliases
 #---
 
-alias ll='ls -Fl'
-alias la='ls -Fal'
-alias less='less -MR'
-alias sudo='sudo '
-alias g='git'
 alias be='bundle exec'
+alias d='docker'
+alias dc='docker-compose'
+alias ds='docker-sync'
 alias findf='find . -type f -name'
+alias g='git'
+alias k='kubectl'
+alias la='exa -lah --git'
+alias less='less -MR'
+alias ll='exa -lh --git'
+alias ls='exa'
+alias m='make'
 alias sqlite3='sqlite3 -column -header'
 alias du1='du -h -d 1'
+alias sudo='sudo '
 
 if command -v exa >/dev/null 2>&1; then
     alias ls='exa'
@@ -152,7 +158,11 @@ fi
 
 compinit -u
 
+#compdef d='docker'
+#compdef dc='docker-compose'
 compdef g='git'
+#compdef k='kubectl'
+compdef m='make'
 
 #
 # zsh-autosuggestions
