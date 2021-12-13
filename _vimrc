@@ -4,25 +4,40 @@ set nobackup
 
 set encoding=utf-8
 set fileencoding=utf-8
-set fileencodings=iso-2022-jp,euc-jp,utf-8,ucs-2,cp932,sjis
+set fileencodings=utf-8,iso-2022-jp,euc-jp,ucs-2,cp932,sjis
 set fileformat=unix
 set fileformats=unix,dos,mac
 
+set expandtab
 set tabstop=2
 set shiftwidth=2
+set softtabstop=2
 set smartindent
+set autoindent
 set smarttab
-set expandtab
 
+set incsearch
+set hlsearch
 set ignorecase
 set smartcase
-set incsearch
+set wrapscan
 
-"set number
+set number
 set ruler
-"set title
+set title
+set cursorline
 set showmatch
 set showmode
+
+set laststatus=2
+set statusline=%f
+set statusline+=\ %m
+set statusline+=\ %r
+set statusline+=%=
+set statusline+=[%l:%c]
+set statusline+=%y
+set statusline+=[%{&fileencoding}]
+set statusline+=[%{&fileformat}]
 
 set backspace=indent,eol,start
 
