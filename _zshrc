@@ -45,38 +45,20 @@ colors () {
   done
 }
 
-if command -v pbcopy >/dev/null 2>&1; then
-  pbfilter () {
-    pbpaste | "$@" | pbcopy
-  }
-  alias pbf='pbfilter'
-fi
-
 #
 # Aliases
 #---
 
-alias be='bundle exec'
+alias ll='ls -Fl'
+alias la='ls -Fal'
+alias less='less -MR'
+alias sudo='sudo '
+alias du1='du -h -d 1'
+alias g='git'
 alias d='docker'
 alias dc='docker-compose'
-alias ds='docker-sync'
-alias findf='find . -type f -name'
-alias g='git'
-alias k='kubectl'
-alias la='exa -lah --git'
-alias less='less -MR'
-alias ll='exa -lh --git'
-alias ls='exa'
-alias m='make'
-alias sqlite3='sqlite3 -column -header'
-alias du1='du -h -d 1'
-alias sudo='sudo '
-
-if command -v exa >/dev/null 2>&1; then
-    alias ls='exa'
-    alias ll='exa -lh --git'
-    alias la='exa -lah --git'
-fi
+alias pbc='pbcopy'
+alias pbp='pbpaste'
 
 case "$TERM" in
     xterm*|rxvt*) color=yes;;
@@ -88,21 +70,8 @@ if [ -n "$color" ]; then
 fi
 unset color
 
-if command -v diffstat >/dev/null 2>&1; then
-    alias diffstat='diffstat -C'
-fi
-
 if command -v colordiff >/dev/null 2>&1; then
     alias diff='colordiff'
-fi
-
-if [ -x "/Applications/Emacs.app/Contents/MacOS/Emacs" ]; then
-    alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs -nw'
-fi
-
-if command -v pbcopy >/dev/null 2>&1; then
-  alias pbc='pbcopy'
-  alias pbp='pbpaste'
 fi
 
 #
@@ -158,11 +127,7 @@ fi
 
 compinit -u
 
-#compdef d='docker'
-#compdef dc='docker-compose'
 compdef g='git'
-#compdef k='kubectl'
-compdef m='make'
 
 #
 # zsh-autosuggestions
@@ -192,10 +157,8 @@ if [ -e ~/.zshrc.local ]; then
   source ~/.zshrc.local
 fi
 
-#---
-
-if type starship > /dev/null; then
-  #eval "$(starship init zsh)"
-fi
-
 typeset -U PATH FPATH CDPATH
+
+if command -v starship >/dev/null 2>&1; then
+  eval "$(starship init zsh)"
+fi
