@@ -23,7 +23,6 @@ set wrapscan
 set number
 set ruler
 set title
-set cursorline
 set showmatch
 set showmode
 
