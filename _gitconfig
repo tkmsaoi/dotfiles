@@ -12,7 +12,7 @@
   b = branch
   c = commit
   d = diff
-  f = fetch --tags
+  f = fetch --prune --tags
   l = log
   m = merge
   s = status
