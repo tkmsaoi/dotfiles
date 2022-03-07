@@ -38,6 +38,7 @@ if status is-interactive
   alias g=git
   alias d=docker
   alias dc=docker-compose
+  alias l='ls -al'
   alias pbc=pbcopy
   alias pbp=pbpaste
 
