@@ -1,0 +1,18 @@
+{
+	"font_face": "JetBrains Mono",
+	"draw_white_space": ["all"],
+	"translate_tabs_to_spaces": true,
+	"block_caret": true,
+	"highlight_line": true,
+	"hide_tab_scrolling_buttons": true,
+	"hide_new_tab_button": true,
+	"show_sidebar_button": false,
+	"show_encoding": true,
+	"show_line_endings": true,
+	"open_files_in_new_window": "never",
+	"ignored_packages":
+	[
+		"Vintage",
+	],
+	"color_scheme": "Packages/Dracula Color Scheme/Dracula.tmTheme",
+}
