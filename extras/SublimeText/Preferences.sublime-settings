@@ -9,6 +9,7 @@
 	"show_sidebar_button": false,
 	"show_encoding": true,
 	"show_line_endings": true,
+	"close_windows_when_empty": false,
 	"open_files_in_new_window": "never",
 	"ignored_packages":
 	[

@@ -1,0 +1,4 @@
+[
+    { "keys": ["ctrl+k"], "command": "noop" },
+    { "keys": ["ctrl+l"], "command": "noop" },
+]
