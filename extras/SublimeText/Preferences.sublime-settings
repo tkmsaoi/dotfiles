@@ -6,11 +6,14 @@
 	"highlight_line": true,
 	"hide_tab_scrolling_buttons": true,
 	"hide_new_tab_button": true,
+	"show_git_status_in_status_bar": false,
 	"show_sidebar_button": false,
 	"show_encoding": true,
 	"show_line_endings": true,
 	"close_windows_when_empty": false,
 	"open_files_in_new_window": "never",
+	"tree_animation_enabled": false,
+	"animation_enabled": false,
 	"ignored_packages":
 	[
 		"Vintage",

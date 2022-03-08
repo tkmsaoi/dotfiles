@@ -1,4 +1,14 @@
 [
     { "keys": ["ctrl+k"], "command": "noop" },
     { "keys": ["ctrl+l"], "command": "noop" },
+
+    { "keys": ["super+1"], "command": "toggle_side_bar" },
+    { "keys": ["super+2"], "command": "noop" },
+    { "keys": ["super+3"], "command": "noop" },
+    { "keys": ["super+4"], "command": "noop" },
+    { "keys": ["super+5"], "command": "noop" },
+    { "keys": ["super+6"], "command": "noop" },
+    { "keys": ["super+7"], "command": "noop" },
+    { "keys": ["super+8"], "command": "noop" },
+    { "keys": ["super+9"], "command": "noop" },
 ]
