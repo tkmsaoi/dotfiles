@@ -59,6 +59,9 @@ alias d='docker'
 alias dc='docker-compose'
 alias pbc='pbcopy'
 alias pbp='pbpaste'
+alias k='kubectl'
+alias ktx='kubectx'
+alias kns='kubens'
 
 case "$TERM" in
     xterm*|rxvt*) color=yes;;
