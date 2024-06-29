@@ -16,8 +16,12 @@ begin
   end
 end
 
-if test -d "/Applications/Sublime Text.app/Contents/SharedSupport/bin"
-  fish_add_path "/Applications/Sublime Text.app/Contents/SharedSupport/bin"
+if test -d /usr/local/share/dotnet/x64
+  fish_add_path /usr/local/share/dotnet/x64
+end
+
+if test -d $HOME/.dotnet/tools
+  fish_add_path $HOME/.dotnet/tools
 end
 
 fish_add_path $HOME/local/bin
