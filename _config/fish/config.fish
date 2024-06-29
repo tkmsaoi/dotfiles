@@ -55,6 +55,12 @@ if status is-interactive
   end
 end
 
+#
+# Google Cloud SDK
+#---
+
+if [ -f '/Users/tkmsaoi/google-cloud-sdk/path.fish.inc' ]; . '/Users/tkmsaoi/google-cloud-sdk/path.fish.inc'; end
+
 #---
 
 if test -e ~/.config/fish/config.fish.local
